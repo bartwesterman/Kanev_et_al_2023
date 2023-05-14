@@ -1,4 +1,4 @@
-## Predicting the target-landscape of kinase-inhibitors using 3D convolutional neural networks on densely covered chemo genomics data
+## Predicting the target-landscape of kinase-inhibitors using 3D convolutional neural network on densely covered chemogenomics data
 Georgi K. Kanev, Yaran Zhang, Albert J. Kooistra, Andreas Bender, Rob Leurs, David Bailey, Thomas Würdinger, Chris de Graaf, Iwan J.P. de Esch, Bart A. Westerman
 
 ### Abstract
