@@ -1,10 +1,8 @@
 ### Requires:
-pandas\
-numpy\
-rdkit\
-sklearn\
-seaborn\
-matplotlib
+GE  : pandas, numpy\
+CH  : rdkit\
+ML  : sklearn\
+VIS : seaborn, matplotlib
 
 ### Workflow:
 #### Prepare data:
