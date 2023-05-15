@@ -7,11 +7,11 @@ VIS : seaborn, matplotlib
 ### Workflow:
 #### Prepare data:
 (0) unzip the files in ../data/*.zip\
-(1) python prep_chembl.py\
-(2) python prep_vanwesten.py\
-(3) python merge_db_sets.py\
-(4) bash gen_tautomers.sh\
-(5) python extr_tautomers.py\
+(1) bash gen_tautomers.sh\
+(2) python extr_tautomers.py\
+(3) python prep_chembl.py\
+(4) python prep_vanwesten.py\
+(5) python merge_db_sets.py\
 (6) python rm_cpds.py\
 (7) python sel_kinases.py\
 (8) python prep_dense_set.py\
