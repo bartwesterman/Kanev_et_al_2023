@@ -8,7 +8,7 @@ matplotlib
 
 ### Workflow:
 #### Prepare data:
-(0) unzip the files in ../data/*.zip
+(0) unzip the files in ../data/*.zip\
 (1) python prep_chembl.py\
 (2) python prep_vanwesten.py\
 (3) python merge_db_sets.py\
