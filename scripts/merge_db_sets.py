@@ -5,10 +5,15 @@ import pandas as pd
 root = os.path.dirname(os.getcwd())
 chembl = pd.read_csv(root + "/data/chembl/prep_chembl_v31.csv",header=None)
 
-# 447518 db_sets.csv
+print("writing chembl to db_sets.csv")
+print(chembl.shape)
+chembl.to_csv(root + "/data/db_sets.csv", index=None, header=None)
+
+print("writing vanwesten to db_sets.csv")
 with open (root + "/data/vanwesten/prep_vanwesten.csv", "r") as f_in:
     
     with open (root + "/data/db_sets.csv", "a") as f_out:
+
         for line in f_in:
 
             line = line.rstrip()
