@@ -10,8 +10,8 @@ VIS : seaborn, matplotlib
 (1) bash gen_tautomers.sh \
 (2) python extr_tautomers.py
 
-* Unzip the files in ../data/\
-(0) unzip ../data/*.zip
+* Unzip the files in ../data/*\
+(0) unzip *.zip
 
 * Prepare the data\
 (3) python prep_chembl.py\
