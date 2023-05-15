@@ -1,4 +1,4 @@
-### Required packages for the python scripts:
+### Required python packages:
 GE  : pandas, numpy\
 CH  : rdkit\
 ML  : sklearn\
