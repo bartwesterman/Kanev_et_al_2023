@@ -1,14 +1,19 @@
-### Requires:
+### Required packages for the python scripts:
 GE  : pandas, numpy\
 CH  : rdkit\
 ML  : sklearn\
 VIS : seaborn, matplotlib
 
 ### Workflow:
-#### Prepare data:
-(0) unzip the files in ../data/*.zip\
-(1) bash gen_tautomers.sh\
-(2) python extr_tautomers.py\
+##### Prepare data:
+* Prepare the tautomer files ../data/chembl/chembl_tauromers.csv & ../data/vanwesten/vanwesten_tauromer.csv\
+(1) bash gen_tautomers.sh \
+(2) python extr_tautomers.py
+
+* Unzip the files in ../data/\
+(0) unzip ../data/*.zip
+
+* Prepare the data\
 (3) python prep_chembl.py\
 (4) python prep_vanwesten.py\
 (5) python merge_db_sets.py\
