@@ -5,15 +5,16 @@ ML  : sklearn\
 VIS : seaborn, matplotlib
 
 ### Workflow:
-##### Prepare data:
-* Prepare the tautomer files ../data/chembl/chembl_tauromers.csv & ../data/vanwesten/vanwesten_tauromer.csv\
+:arrow_right: The tautomer files were prepared with:\
 (1) bash gen_tautomers.sh \
 (2) python extr_tautomers.py
 
-* Unzip the files in ../data/*\
-(0) unzip *.zip
+:arrow_right: Unzip (before running steps 3 to 9)\
+../data/chembl/chembl_tautomers.csv.zip\
+../data/chembl/chembl_v31.csv.zip\
+../data/vanwesten/si4_complete_dataset.txt.zip
 
-* Prepare the data\
+:arrow_right: Prepare the data\
 (3) python prep_chembl.py\
 (4) python prep_vanwesten.py\
 (5) python merge_db_sets.py\
@@ -22,11 +23,11 @@ VIS : seaborn, matplotlib
 (8) python prep_dense_set.py\
 (9) python prep_sparse_set.py
 
-#### Prepare 3D-CNN model:
+:arrow_right: Prepare the 3D-CNN model:
 
-#### Analysis:
+:arrow_right: Analysis:
 
-### Software:
+### Standalone software:
 #### Ambit-Tautomer: An Open Source Tool for Tautomer Generation
 Nikolay T Kochev, Vesselina H Paskaleva, Nina Jeliazkova\
 Mol Inform. 2013 Jun;32(5-6):481-504.\
