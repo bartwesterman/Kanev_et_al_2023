@@ -5,7 +5,7 @@ ML  : sklearn\
 VIS : seaborn, matplotlib
 
 ### Workflow:
-:arrow_right: The tautomer files were prepared with (can be skipped):\
+:arrow_right: Prepare tautomers (can be skipped):\
 (1) bash gen_tautomers.sh \
 (2) python extr_tautomers.py
 
