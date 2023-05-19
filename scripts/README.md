@@ -1,7 +1,7 @@
 ### Required python packages:
 GE  : pandas, numpy\
 CH  : rdkit\
-ML  : scikit-learn, pytorch, [libmolgrid](https://github.com/gnina/libmolgrid)\
+ML  : scikit-learn, pytorch, torchinfo, [libmolgrid](https://github.com/gnina/libmolgrid)\
 VIS : seaborn, matplotlib
 
 ### Workflow:
