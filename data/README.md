@@ -1,3 +1,10 @@
+:arrow_right: the chembl folder\
+contains the ChEMBL v31 relavant data
+
+:arrow_right: the franck folder\
+contains the [Serge Christmann-Franck et al. 2016](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00122) relevant data
+
+
 Shapes of the data files:\
 (169723, 8) data.csv\
 (150896, 8) dense_tran.csv\
