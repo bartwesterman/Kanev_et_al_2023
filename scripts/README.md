@@ -25,7 +25,8 @@ VIS : seaborn, matplotlib
 
 :arrow_right: Prepare the 3D-CNN model:
 
-:arrow_right: Analysis:
+:arrow_right: Evaluate features:
+(1) train_models.py
 
 ### Standalone software:
 #### Ambit-Tautomer: An Open Source Tool for Tautomer Generation
