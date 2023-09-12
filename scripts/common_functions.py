@@ -1,5 +1,6 @@
 import os
 import numpy as np
+import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit import DataStructs
@@ -35,3 +36,57 @@ def get_indeces_identical_mols(similarities_matrix):
                 indeces_identical_mols.append(i)
 
     return(indeces_identical_mols)
+
+
+def morgan_fp(df):
+    features = []
+    for i, r in df.iterrows():
+        smile = r["smiles"]
+        mol = Chem.MolFromSmiles(smile)
+        bits = AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=1024)
+        features.append(list(bits))
+    return(features)
+
+def one_hot_encoding(df,onehotdict):
+    onehot = np.zeros((df.shape[0], 69))
+    row_index = 0
+    for i, r in df.iterrows():
+        onehot[row_index, onehotdict[r["kinase"]]] = 1
+        row_index += 1
+
+    return(onehot)
+
+def zscale_sequence(df,features_path):
+    kinases = df['kinase']
+    zscales = pd.read_csv(features_path + "/zscales_seq.txt", delimiter="\t")
+    zscales = zscales.drop(["Pocket"], axis=1)
+    merged = pd.merge(left=kinases, right=zscales, how='left', left_on='kinase', right_on='HGNC/MGI')
+    merged = merged.drop(['kinase'], axis=1)
+    merged = merged.drop(['HGNC/MGI'], axis=1)
+    return(np.array(merged))
+
+def zscale_residue(df,features_path):
+    kinases = df['kinase']
+    zscales = pd.read_csv(features_path +  "/zscales_res.txt", delimiter="\t")
+    zscales = zscales.drop(["PocketSequence"], axis=1)
+    merged = pd.merge(left=kinases, right=zscales, how='left', left_on='kinase', right_on='HGNC/MGI')
+    merged = merged.drop(['kinase'], axis=1)
+    merged = merged.drop(['HGNC/MGI'], axis=1)
+    return(np.array(merged))
+
+def protvec(df,features_path):
+    kinases = df['kinase']
+    protvec = pd.read_csv(features_path + "/protvec.txt", delimiter=" ")
+    protvec = protvec.drop(["pocket"], axis=1)
+    merged = pd.merge(left=kinases, right=protvec, how='left', left_on='kinase', right_on='HGNC/MGI')
+    merged = merged.drop(['kinase'], axis=1)
+    merged = merged.drop(['HGNC/MGI'], axis=1)
+    return(np.array(merged))
+
+def cnn(df,features_path):
+    kinases = df['kinase']
+    cnn = pd.read_csv(features_path + "/model_3_127/fp_2.txt", delimiter=" ")
+    merged = pd.merge(left=kinases, right=cnn, how='left', left_on='kinase', right_on='HGNC/MGI')
+    merged = merged.drop(['kinase'], axis=1)
+    merged = merged.drop(['HGNC/MGI'], axis=1)
+    return(np.array(merged))
